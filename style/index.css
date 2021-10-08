@@ -1,15 +1,54 @@
-*{
+body{
     margin: 0px;
     padding: 0px;
+    overflow:hidden;
+}
+
+#container{
+
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-image: url("../photos/spaceBackground.jpg");
 }
 .tank{
-    width: 200px;
-    height: 200px;
+    display: inline-block;
+    position: absolute;
+    width: 300px;
+    height: 150px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin: 0px;
 }
 
-.ground{
+.tank:nth-of-type(1){
+    left: 20px;
+    bottom: 120px;
+    background-image: url("../photos/tank1.png");
+}
 
+.tank:nth-of-type(2 ){
+    right: 100px;
+    bottom: 87px;
+    background-image: url("../photos/tank2.png");
+}
+
+#ground{
+    position: absolute;
     width: 100%;
     height: 20vh;
     background-color: brown;
+    bottom: 0px;
+
+}
+
+#fireball{
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    bottom:250px;
+    left: 400px;
+    
+    background-image: radial-gradient(yellow,red);
 }
