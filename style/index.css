@@ -22,6 +22,7 @@ body{
     bottom: 20vh;
     background-size: cover;
     background-repeat: no-repeat;
+    z-index: 3;
 }
 
 #tank1{
@@ -42,16 +43,17 @@ body{
     z-index: 2;
     position: absolute;
     width: 100%;
-    height: 20vh;
+    height: 50vh;
     background-color: brown;
     bottom: 0px;
     background-image: url("../photos/ground.jpg");
     background-repeat: no-repeat;
     background-size: cover;
-    background-position-y: -170px;
+    
 }
 
 #fireball{
+    z-index: 4;
     position: absolute;
     width: 10px;
     height: 10px;
@@ -62,14 +64,16 @@ body{
 }
 
 table{
+    position: absolute;
     height: 10vh;
     width: 10vw;
-    margin-left: 50px;
-    margin-right: 50px;
-    margin-top: 30px;
+    bottom: 0px;
+    margin: 0px 10px 10px 10px;
     border: 2px solid rgb(185, 32, 32);
     border-radius: 10px;
     padding: 5px;
+    background-color: rgba(0, 0, 0, 0.603);
+    
 }
 
 td{
@@ -91,9 +95,9 @@ td{
     top: 5vh;
     width: 15vw;
     height: 20px;
-    border: 2px solid grey;
+    border: 3px solid grey;
     position: absolute;
-    border-radius: 10px;
+    /* border-radius: 10px; */
     
 }
 
@@ -111,15 +115,15 @@ td{
     background-color: red;
     width: 100%;
     height: 100%;
-    border-radius: 10px;
+    /* border-radius: 10px; */
 }
 
 #fire{
     position:absolute;
     display:inline-block;
-    width: 15vw;
-    height: 25vh;
-    z-index: 2;
+    width: 6vw;
+    height: 8vh;
+    z-index: 4;
     top: -200px;
     background-image: url(../photos/fire.png);
     background-size: contain;

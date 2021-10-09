@@ -55,15 +55,16 @@ var fire = document.getElementById("fire");
             y = 560 -( (Math.tan(radian))*(i - tank_pos) - ( 10*((i - tank_pos)*(i - tank_pos)) )/ (  (2*(pow*(Math.cos(radian)) ) )* (pow*(Math.cos(radian)))   ) );
             ball.style.top= y + "px";
             i=i+2;
-            if(  y  <= 650){
+            if(  y  <= 600){
                     if(fireball.offsetLeft>=tank2.offsetLeft&&fireball.offsetLeft<=(tank2.offsetLeft+90) && fireball.offsetTop>=tank2.offsetTop&&fireball.offsetTop<=(tank2.offsetTop+50)){
-                        fire.style.left=(tank2.offsetLeft)+"px";
-                        fire.style.top=(tank2.offsetTop-30)+"px";
+                        fire.style.left=(tank2.offsetLeft +25)+"px";
+                    fire.style.top=(tank2.offsetTop-13)+"px";
                         if(hbar == 1){
                             document.getElementById("health2").style.width = (document.getElementById("health2").offsetWidth) -32+ "px";
                             if(document.getElementById("health2").offsetWidth  < 10 ){
-                                fire.style.left=(tank2.offsetLeft)+"px";
-                                fire.style.top=(tank2.offsetTop-30)+"px";
+                                fire.style.left=(tank2.offsetLeft +10)+"px";
+                    fire.style.top=(tank2.offsetTop-13)+"px";
+                                document.getElementById("health2").style.width="0px"
                                 alert("game over");
                             }
                             hbar = 0;
@@ -75,10 +76,11 @@ var fire = document.getElementById("fire");
                 projectile1(pow , angl , rng );
             }
             else{
+                fireball.style.top = "-200px"
                 setTimeout(() => {
                     count=-1;
                     turn = -1;
-                    table.style.cssFloat = "right";
+                    table.style.right = "0px";
                     resetAngle.innerHTML="50";
                     resetPower.innerHTML="50";
                 }, 1500);
@@ -92,17 +94,18 @@ var fire = document.getElementById("fire");
             y = 560 -( (Math.tan(radian))*(i) - ( 10*((i)*(i)) )/ (  (2*(pow*(Math.cos(radian)) ) )* (pow*(Math.cos(radian)))   ) );
             ball.style.top = y+"px";
             i = i-2;
-            if( y <=650 ){
+            if( y <=600 ){
                 if(fireball.offsetLeft>=tank1.offsetLeft&&fireball.offsetLeft<=(tank1.offsetLeft+90)
                 &&fireball.offsetTop>=(tank1.offsetTop+20)&&fireball.offsetTop<=(tank1.offsetTop+50))
                 {
-                    fire.style.left=(tank1.offsetLeft - 15)+"px";
-                    fire.style.top=(tank1.offsetTop-30)+"px";
+                    fire.style.left=(tank1.offsetLeft +10)+"px";
+                    fire.style.top=(tank1.offsetTop-13)+"px";
                     if(hbar == 1){
                         document.getElementById("health1").style.width = (document.getElementById("health1").offsetWidth) -32+ "px";
                         if(document.getElementById("health1").offsetWidth  < 10 ){
-                            fire.style.left=(tank1.offsetLeft)+"px";
-                            fire.style.top=(tank1.offsetTop-30)+"px";
+                            fire.style.left=(tank1.offsetLeft +10)+"px";
+                            fire.style.top=(tank1.offsetTop-13)+"px";
+                            document.getElementById("health1").style.width="0px"
                             alert("game over");
                         }
                         hbar = 0;
@@ -116,10 +119,11 @@ var fire = document.getElementById("fire");
                 projectile2(pow , angl , rng);
             }
             else{
+                fireball.style.top = "-200px"
                 setTimeout(() => {
                     count=0;
                     turn = 1;
-                    table.style.cssFloat = "left";
+                    table.style.left = "0px";
                     resetAngle.innerHTML="50";
                     resetPower.innerHTML="50";
                 }, 1500);
