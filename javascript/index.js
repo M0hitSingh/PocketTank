@@ -8,6 +8,7 @@ var tank2 = document.getElementById("tank2");
 var fireball = document.getElementById("fireball");
 var fire = document.getElementById("fire");
     const pi = Math.PI;
+    var hbar = 1;
     // var pow = 100;
     // var angl = 88;
     var save;
@@ -39,10 +40,10 @@ var fire = document.getElementById("fire");
     }
     function time(pow , radian){
         t = (pow*(Math.sin(radian)))/10;
+  
         if(dir ==-1)
             i = (Math.tan(radian) + Math.sqrt(Math.tan(radian)*Math.tan(radian) - (20/((pow*(Math.cos(radian)))*(pow*(Math.cos(radian)))) )))/ (10/((pow*Math.cos(radian))*(pow*Math.cos(radian))) );
         save = i;
-        console.log(i);
         if(dir ==1)
             projectile1(pow ,angl ,rng );
         else
@@ -55,23 +56,33 @@ var fire = document.getElementById("fire");
             ball.style.top= y + "px";
             i=i+2;
             if(  y  <= 650){
-                    if(fireball.offsetLeft>=tank2.offsetLeft&&fireball.offsetLeft<=(tank2.offsetLeft+90)
-                        &&fireball.offsetTop>=tank2.offsetTop&&fireball.offsetTop<=(tank2.offsetTop+50)){
-                            fire.style.left=(tank2.offsetLeft)+"px";
-                            fire.style.top=(tank2.offsetTop-30)+"px";
+                    if(fireball.offsetLeft>=tank2.offsetLeft&&fireball.offsetLeft<=(tank2.offsetLeft+90) && fireball.offsetTop>=tank2.offsetTop&&fireball.offsetTop<=(tank2.offsetTop+50)){
+                        fire.style.left=(tank2.offsetLeft)+"px";
+                        fire.style.top=(tank2.offsetTop-30)+"px";
+                        if(hbar == 1){
+                            document.getElementById("health2").style.width = (document.getElementById("health2").offsetWidth) -32+ "px";
+                            if(document.getElementById("health2").offsetWidth  < 10 ){
+                                fire.style.left=(tank2.offsetLeft)+"px";
+                                fire.style.top=(tank2.offsetTop-30)+"px";
+                                alert("game over");
+                            }
+                            hbar = 0;
+                        }        
                     }     
                     setTimeout(() => {
                         fire.style.top=-200+"px";
-
-                    }, 5000);
-
+                    }, 3000);
                 projectile1(pow , angl , rng );
-            }else{
-                count=-1;
-                turn = -1;
-                table.style.cssFloat = "right";
-                resetAngle.innerHTML="50";
-                resetPower.innerHTML="50";
+            }
+            else{
+                setTimeout(() => {
+                    count=-1;
+                    turn = -1;
+                    table.style.cssFloat = "right";
+                    resetAngle.innerHTML="50";
+                    resetPower.innerHTML="50";
+                }, 1500);
+               
             }
         },(t+incr))
     }
@@ -87,20 +98,31 @@ var fire = document.getElementById("fire");
                 {
                     fire.style.left=(tank1.offsetLeft - 15)+"px";
                     fire.style.top=(tank1.offsetTop-30)+"px";
+                    if(hbar == 1){
+                        document.getElementById("health1").style.width = (document.getElementById("health1").offsetWidth) -32+ "px";
+                        if(document.getElementById("health1").offsetWidth  < 10 ){
+                            fire.style.left=(tank1.offsetLeft)+"px";
+                            fire.style.top=(tank1.offsetTop-30)+"px";
+                            alert("game over");
+                        }
+                        hbar = 0;
+                    }
                 }
                 setTimeout(() => {
                     fire.style.top=-200+"px";
 
-                }, 5000);
+                }, 3000);
     
                 projectile2(pow , angl , rng);
             }
             else{
-                count=0;
-                turn = 1;
-                table.style.cssFloat = "left";
-                resetAngle.innerHTML="50";
-                resetPower.innerHTML="50";
+                setTimeout(() => {
+                    count=0;
+                    turn = 1;
+                    table.style.cssFloat = "left";
+                    resetAngle.innerHTML="50";
+                    resetPower.innerHTML="50";
+                }, 1500);
             }
         },(t+incr))
     }
