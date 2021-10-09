@@ -12,29 +12,31 @@ body{
     background-image: linear-gradient(to bottom,darkblue,lightblue);
 }
 .tank{
-    display: inline-block;
-    position: absolute;
-    width: 10vw;
-    height: 20vh;
-    background-size: contain;
+    
+    position:absolute;
+    width: 6vw;
+    height: 50px;
+    bottom: 20vh;
+    background-size: cover;
     background-repeat: no-repeat;
-    margin: 0px;
+    border: 2px solid red;
 }
 
 .tank:nth-of-type(1){
     left: 20px;
-    bottom: 8vh;
+    bottom: 20vh;
     background-image: url("../photos/tank1.png");
 }
 
-.tank:nth-of-type(2 ){
-    right: 100px;
-    bottom: 6vh;
+.tank:nth-of-type(2){
+    width: 10vw;
+    right: 200px;
+    bottom: 20vh;
     background-image: url("../photos/tank2.png");
 }
 
 #ground{
-    /* z-index: 2; */
+    z-index: 2;
     position: absolute;
     width: 100%;
     height: 20vh;
@@ -49,8 +51,7 @@ body{
     width: 10px;
     height: 10px;
     border-radius: 50%;
-    bottom:250px;
-    left: 200px;
+    left: -50px;
     background-image: radial-gradient(yellow,red);
 }
 
@@ -78,5 +79,32 @@ td{
     text-align: center;
 }
 
+#outerHealth1, #outerHealth2{
+    display: inline-block;
+    position: absolute;
+    top: 5vh;
+    width: 15vw;
+    height: 20px;
+    border: 2px solid grey;
+    position: absolute;
+    border-radius: 10px;
+    
+}
 
+#outerHealth1{
+    float: left;
+    left: 20px;
+}
+
+#outerHealth2{
+    right: 20px;
+}
+
+
+#health1, #health2{
+    background-color: red;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+}
 
