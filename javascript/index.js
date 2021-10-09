@@ -6,6 +6,7 @@ function fire(pow, angl, dir) {
     var tank1 = document.getElementById("tank1");
 var tank2 = document.getElementById("tank2");
 var fireball = document.getElementById("fireball");
+var fire = document.getElementById("fire");
     const pi = Math.PI;
     // var pow = 100;
     // var angl = 88;
@@ -54,13 +55,16 @@ var fireball = document.getElementById("fireball");
             ball.style.top= y + "px";
             i=i+2;
             if(  y  <= 650){
-
-                
                     if(fireball.offsetLeft>=tank2.offsetLeft&&fireball.offsetLeft<=(tank2.offsetLeft+90)
                         &&fireball.offsetTop>=tank2.offsetTop&&fireball.offsetTop<=(tank2.offsetTop+50)){
-                        alert("collied");
-                    }
-            
+                            fire.style.left=(tank2.offsetLeft)+"px";
+                            fire.style.top=(tank2.offsetTop-30)+"px";
+                    }     
+                    setTimeout(() => {
+                        fire.style.top=-200+"px";
+
+                    }, 5000);
+
                 projectile1(pow , angl , rng );
             }else{
                 count=-1;
@@ -79,9 +83,15 @@ var fireball = document.getElementById("fireball");
             i = i-2;
             if( y <=650 ){
                 if(fireball.offsetLeft>=tank1.offsetLeft&&fireball.offsetLeft<=(tank1.offsetLeft+90)
-                &&fireball.offsetTop>=(tank1.offsetTop+20)&&fireball.offsetTop<=(tank1.offsetTop+50)){
-                alert("collied"); // booommmmmm image 
-            }
+                &&fireball.offsetTop>=(tank1.offsetTop+20)&&fireball.offsetTop<=(tank1.offsetTop+50))
+                {
+                    fire.style.left=(tank1.offsetLeft - 15)+"px";
+                    fire.style.top=(tank1.offsetTop-30)+"px";
+                }
+                setTimeout(() => {
+                    fire.style.top=-200+"px";
+
+                }, 5000);
     
                 projectile2(pow , angl , rng);
             }

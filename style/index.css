@@ -109,3 +109,14 @@ td{
     border-radius: 10px;
 }
 
+#fire{
+    position:absolute;
+    display:inline-block;
+    width: 15vw;
+    height: 25vh;
+    z-index: 2;
+    top: -200px;
+    background-image: url(../photos/fire.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
