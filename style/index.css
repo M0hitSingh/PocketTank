@@ -11,7 +11,7 @@ body{
     height: 100vh;
     background-image: linear-gradient(to bottom,darkblue,lightblue);
 }
-.tank{
+#tank1, #tank2{
     
     position:absolute;
     width: 6vw;
@@ -19,19 +19,19 @@ body{
     bottom: 20vh;
     background-size: cover;
     background-repeat: no-repeat;
-    border: 2px solid red;
 }
 
-.tank:nth-of-type(1){
-    left: 20px;
+#tank1{
+    left: 200px;
     bottom: 20vh;
     background-image: url("../photos/tank1.png");
 }
 
-.tank:nth-of-type(2){
+#tank2{
+    transform: scale(0.8);
     width: 10vw;
     right: 200px;
-    bottom: 20vh;
+    bottom: 19vh;
     background-image: url("../photos/tank2.png");
 }
 
@@ -51,7 +51,8 @@ body{
     width: 10px;
     height: 10px;
     border-radius: 50%;
-    left: -50px;
+    top: -20px;
+    left: 200px;
     background-image: radial-gradient(yellow,red);
 }
 

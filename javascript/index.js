@@ -1,13 +1,19 @@
-function fire(pow = 45, angl=29, dir= 1) {
+function fire(pow, angl, dir) {
     var ball = document.getElementById("fireball");
+    var table = document.querySelector("table");
+    var resetAngle = document.getElementById("angle");
+    var resetPower = document.getElementById("power");
+    var tank1 = document.getElementById("tank1");
+var tank2 = document.getElementById("tank2");
+var fireball = document.getElementById("fireball");
     const pi = Math.PI;
     // var pow = 100;
     // var angl = 88;
     var save;
     var incr =0;
-    var tank_pos = document.getElementsByClassName("tank")[0].offsetLeft ;
+    var tank_pos = document.getElementById("tank1").offsetLeft+90 ;
     if(dir == -1){
-        tank_pos = document.getElementsByClassName("tank")[1].offsetLeft  ;
+        tank_pos = document.getElementById("tank2").offsetLeft  ;
     }
     if(angl >75){
         incr = 15;  
@@ -48,7 +54,20 @@ function fire(pow = 45, angl=29, dir= 1) {
             ball.style.top= y + "px";
             i=i+2;
             if(  y  <= 650){
+
+                
+                    if(fireball.offsetLeft>=tank2.offsetLeft&&fireball.offsetLeft<=(tank2.offsetLeft+90)
+                        &&fireball.offsetTop>=tank2.offsetTop&&fireball.offsetTop<=(tank2.offsetTop+50)){
+                        alert("collied");
+                    }
+            
                 projectile1(pow , angl , rng );
+            }else{
+                count=-1;
+                turn = -1;
+                table.style.cssFloat = "right";
+                resetAngle.innerHTML="50";
+                resetPower.innerHTML="50";
             }
         },(t+incr))
     }
@@ -59,7 +78,19 @@ function fire(pow = 45, angl=29, dir= 1) {
             ball.style.top = y+"px";
             i = i-2;
             if( y <=650 ){
+                if(fireball.offsetLeft>=tank1.offsetLeft&&fireball.offsetLeft<=(tank1.offsetLeft+90)
+                &&fireball.offsetTop>=(tank1.offsetTop+20)&&fireball.offsetTop<=(tank1.offsetTop+50)){
+                alert("collied"); // booommmmmm image 
+            }
+    
                 projectile2(pow , angl , rng);
+            }
+            else{
+                count=0;
+                turn = 1;
+                table.style.cssFloat = "left";
+                resetAngle.innerHTML="50";
+                resetPower.innerHTML="50";
             }
         },(t+incr))
     }
