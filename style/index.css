@@ -20,7 +20,6 @@ body{
     position:absolute;
     width: 6vw;
     height: 50px;
-    bottom: 20vh;
     background-size: cover;
     background-repeat: no-repeat;
     z-index: 3;
@@ -31,7 +30,11 @@ body{
     bottom: 20vh;
     background-image: url("../photos/tank1.png");
 }
-
+#tank1 img{
+    transform:rotateZ(0deg);
+    transform-origin: 5px 22px;
+    margin: 9px 0px 0px 62px;
+}
 #tank2{
     transform: scale(0.8);
     width: 10vw;
@@ -39,7 +42,10 @@ body{
     bottom: 19vh;
     background-image: url("../photos/tank2.png");
 }
-
+#tank2 img{
+    margin: 20px 0px 0px 0px;
+    transform-origin: 5px 0px;
+}
 #ground{
     z-index: 2;
     position: absolute;
@@ -73,7 +79,6 @@ table{
     border-radius: 10px;
     padding: 5px;
     background-color: rgba(0, 0, 0, 0.603);
-    
 }
 
 td{

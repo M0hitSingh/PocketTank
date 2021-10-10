@@ -4,9 +4,9 @@ function fire(pow, angl, dir) {
     var resetAngle = document.getElementById("angle");
     var resetPower = document.getElementById("power");
     var tank1 = document.getElementById("tank1");
-var tank2 = document.getElementById("tank2");
-var fireball = document.getElementById("fireball");
-var fire = document.getElementById("fire");
+    var tank2 = document.getElementById("tank2");
+    var fireball = document.getElementById("fireball");
+    var fire = document.getElementById("fire");
     const pi = Math.PI;
     var hbar = 1;
     // var pow = 100;
@@ -83,9 +83,13 @@ var fire = document.getElementById("fire");
                 setTimeout(() => {
                     count=-1;
                     turn = -1;
+                    turretturn++;                                                                  //turret turn chaance 
+                    turretturn =(turretturn%2);
                     table.style.right = "0px";
+                    table.style.left = "unset";
                     resetAngle.innerHTML="50";
                     resetPower.innerHTML="50";
+                    
                 }, 1500);
                
             }
@@ -126,7 +130,10 @@ var fire = document.getElementById("fire");
                 setTimeout(() => {
                     count=0;
                     turn = 1;
+                    turretturn++;
+                    turretturn =(turretturn%2);
                     table.style.left = "0px";
+                    table.style.right = "unset";
                     resetAngle.innerHTML="50";
                     resetPower.innerHTML="50";
                 }, 1500);
