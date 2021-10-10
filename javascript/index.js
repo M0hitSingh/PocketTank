@@ -76,7 +76,7 @@ function fire(pow, angl, dir) {
                                 pocketTank.style.left="15%"
                                 playButton.innerHTML="Tank1 Winner !!!";
                                 playButton.style.visibility="visible"
-                                
+                                end = 1; 
 
                             }
                             hbar = 0;
@@ -130,6 +130,7 @@ function fire(pow, angl, dir) {
                             pocketTank.style.left="15%"
                             playButton.innerHTML="Tank2 Winner !!!";
                             playButton.style.visibility="visible"
+                            end =1;
                         }
                         hbar = 0;
                     }

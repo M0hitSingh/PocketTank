@@ -1,6 +1,7 @@
 var count = 0;
 var turn = 1;
 var turretturn = 0;
+var end = 0;
 
 function start() {
 
@@ -10,7 +11,7 @@ function start() {
     var power = document.getElementById("power");
 
     window.addEventListener("keydown",function(event){
-        if(event.key==="ArrowRight"){
+        if((event.key==="ArrowRight") && end == 0){
             if(turn==1 && (tank1.offsetLeft+300)<(this.window.innerWidth/2)){
                 tank1.style.left = (tank1.offsetLeft+3)+"px";
             }
@@ -23,7 +24,7 @@ function start() {
     )
 
     window.addEventListener("keydown",function(event){
-        if(event.key==="ArrowLeft"){
+        if(event.key==="ArrowLeft" && end == 0){
             if(turn==1 && tank1.offsetLeft>0){
                 tank1.style.left = (tank1.offsetLeft-3)+"px";
             }
@@ -37,7 +38,7 @@ function start() {
 
 
     window.addEventListener("keydown",function(event){
-        if(event.key==="q"||event.key==="Q"){
+        if((event.key==="q"||event.key==="Q") && end == 0){
             if(parseInt(angle.innerHTML)>10){
                 angle.innerHTML=parseInt(angle.innerHTML)-1;
                 if(turretturn==0){
@@ -47,14 +48,14 @@ function start() {
                 else{
                     var x = (45 + angle.innerHTML);
                     document.getElementsByTagName("img")[turretturn].style.transform="rotate("+ (x-10)+"deg)";
-                    document.getElementsByTagName("img")[turretturn].style.margin="25px 0px 0px 30px"
+                    document.getElementsByTagName("img")[turretturn].style.margin="25px 0px 0px 25px"
                 }
             }
          }
         }
     )
     window.addEventListener("keydown",function(event){
-        if(event.key==="e"||event.key==="E"){
+        if((event.key==="e"||event.key==="E") && end == 0){
             if(parseInt(angle.innerHTML)<89){
                 angle.innerHTML=parseInt(angle.innerHTML)+ 1;     
                 if(turretturn==0){
@@ -64,7 +65,7 @@ function start() {
                 else{
                     var x = ( 45+angle.innerHTML);
                     document.getElementsByTagName("img")[turretturn].style.transform="rotate(" + (x)+"deg)";
-                    document.getElementsByTagName("img")[turretturn].style.margin="25px 0px 0px 30px"
+                    document.getElementsByTagName("img")[turretturn].style.margin="25px 0px 0px 25px"
                 }
             }
          }
@@ -72,27 +73,27 @@ function start() {
     )
 
 window.addEventListener("keydown",function(event){
-    if(event.key==="a"||event.key==="A"){
+    if((event.key==="a"||event.key==="A") && end == 0){
         if(parseInt(power.innerHTML)>1){
             power.innerHTML=parseInt(power.innerHTML)-1;   
         }
-     }
     }
+}
 )
 window.addEventListener("keydown",function(event){
-    if(event.key==="d"||event.key==="D"){
+    if((event.key==="d"||event.key==="D") && end == 0){
         if(parseInt(power.innerHTML)<99){
             power.innerHTML=parseInt(power.innerHTML)+1;
         }
-             }
     }
+}
 )
 
     window.addEventListener("keydown",function(event){
-        if(event.key==="Enter"){
+        if((event.key==="Enter") && end == 0){
             if(count ==0){
-            count++;
-            fire(parseInt(power.innerHTML),parseInt(angle.innerHTML),turn);
+                count++;
+                fire(parseInt(power.innerHTML),parseInt(angle.innerHTML),turn);
             }
             if(count == -1){
                 count--;
@@ -116,6 +117,7 @@ function play() {
     popup.style.visibility="hidden";
     health1.style.width="100%";
     health2.style.width="100%"
+    end = 0;
     start();
 
 }
