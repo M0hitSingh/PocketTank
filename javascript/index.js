@@ -87,7 +87,7 @@ function fire(pow, angl, dir) {
                     turretturn =(turretturn%2);
                     table.style.right = "0px";
                     table.style.left = "unset";
-                    resetAngle.innerHTML="50";
+                    resetAngle.innerHTML="45";
                     resetPower.innerHTML="50";
                     
                 }, 1500);
@@ -134,7 +134,7 @@ function fire(pow, angl, dir) {
                     turretturn =(turretturn%2);
                     table.style.left = "0px";
                     table.style.right = "unset";
-                    resetAngle.innerHTML="50";
+                    resetAngle.innerHTML="45";
                     resetPower.innerHTML="50";
                 }, 1500);
             }
