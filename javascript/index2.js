@@ -12,10 +12,10 @@ function start() {
     window.addEventListener("keydown",function(event){
         if(event.key==="ArrowRight"){
             if(turn==1 && (tank1.offsetLeft+300)<(this.window.innerWidth/2)){
-                tank1.style.left = (tank1.offsetLeft+2)+"px";
+                tank1.style.left = (tank1.offsetLeft+3)+"px";
             }
             else if(turn==-1 && (tank2.offsetLeft+150)<this.window.innerWidth){
-                tank2.style.left = (tank2.offsetLeft+2)+"px";
+                tank2.style.left = (tank2.offsetLeft+3)+"px";
             }
 
          }
@@ -25,10 +25,10 @@ function start() {
     window.addEventListener("keydown",function(event){
         if(event.key==="ArrowLeft"){
             if(turn==1 && tank1.offsetLeft>0){
-                tank1.style.left = (tank1.offsetLeft-2)+"px";
+                tank1.style.left = (tank1.offsetLeft-3)+"px";
             }
             else if(turn==-1 && tank2.offsetLeft>(this.window.innerWidth/2+180)){
-                tank2.style.left = (tank2.offsetLeft-2)+"px";
+                tank2.style.left = (tank2.offsetLeft-3)+"px";
             }
 
          }
