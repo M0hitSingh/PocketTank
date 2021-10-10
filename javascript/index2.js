@@ -87,5 +87,19 @@ window.addEventListener("keydown",function(event){
     )
 }
 
+var pocketTank = document.getElementById("pocketTank");
+var playButton = document.getElementById("playButton");
+var popup = document.getElementById("popup");
+var health1 = document.getElementById("health1");
+var health2 = document.getElementById("health2");
+function play() {
+    
+    pocketTank.style.visibility="hidden";
+    playButton.style.visibility="hidden";
+    popup.style.visibility="hidden";
+    health1.style.width="100%";
+    health2.style.width="100%"
+    start();
 
+}
 
