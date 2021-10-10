@@ -18,10 +18,13 @@ var fire = document.getElementById("fire");
         tank_pos = document.getElementById("tank2").offsetLeft  ;
     }
     if(angl >75){
-        incr = 15;  
+        incr = 25;  
     }
     if(angl < 60 && angl > 30){
-        incr = -15;
+        incr = -25;
+    }
+    if(angl < 25){
+        incr = -50;
     }
     var t;
     var rng ;
@@ -55,15 +58,15 @@ var fire = document.getElementById("fire");
             y = 560 -( (Math.tan(radian))*(i - tank_pos) - ( 10*((i - tank_pos)*(i - tank_pos)) )/ (  (2*(pow*(Math.cos(radian)) ) )* (pow*(Math.cos(radian)))   ) );
             ball.style.top= y + "px";
             i=i+2;
-            if(  y  <= 600){
+            if(  y  <= 570){
                     if(fireball.offsetLeft>=tank2.offsetLeft&&fireball.offsetLeft<=(tank2.offsetLeft+90) && fireball.offsetTop>=tank2.offsetTop&&fireball.offsetTop<=(tank2.offsetTop+50)){
                         fire.style.left=(tank2.offsetLeft +25)+"px";
-                    fire.style.top=(tank2.offsetTop-13)+"px";
+                        fire.style.top=(tank2.offsetTop-13)+"px";
                         if(hbar == 1){
                             document.getElementById("health2").style.width = (document.getElementById("health2").offsetWidth) -32+ "px";
                             if(document.getElementById("health2").offsetWidth  < 10 ){
                                 fire.style.left=(tank2.offsetLeft +10)+"px";
-                    fire.style.top=(tank2.offsetTop-13)+"px";
+                                fire.style.top=(tank2.offsetTop-13)+"px";
                                 document.getElementById("health2").style.width="0px"
                                 alert("game over");
                             }
@@ -86,7 +89,7 @@ var fire = document.getElementById("fire");
                 }, 1500);
                
             }
-        },(t+incr))
+        },(60/t)+incr)
     }
     function projectile2(pow  , angl , rng){
         setTimeout(function(){
@@ -94,7 +97,7 @@ var fire = document.getElementById("fire");
             y = 560 -( (Math.tan(radian))*(i) - ( 10*((i)*(i)) )/ (  (2*(pow*(Math.cos(radian)) ) )* (pow*(Math.cos(radian)))   ) );
             ball.style.top = y+"px";
             i = i-2;
-            if( y <=600 ){
+            if( y <=570 ){
                 if(fireball.offsetLeft>=tank1.offsetLeft&&fireball.offsetLeft<=(tank1.offsetLeft+90)
                 &&fireball.offsetTop>=(tank1.offsetTop+20)&&fireball.offsetTop<=(tank1.offsetTop+50))
                 {
@@ -128,6 +131,6 @@ var fire = document.getElementById("fire");
                     resetPower.innerHTML="50";
                 }, 1500);
             }
-        },(t+incr))
+        },(60/t)+ incr)
     }
 }
