@@ -74,8 +74,7 @@ table{
     height: 10vh;
     width: 10vw;
     bottom: 0px;
-    margin: 0px 10px 10px 10px;
-    border: 2px solid rgb(185, 32, 32);
+    margin: 0px 20px 10px 20px;
     border-radius: 10px;
     padding: 5px;
     background-color: rgba(0, 0, 0, 0.603);
@@ -123,7 +122,7 @@ td{
     /* border-radius: 10px; */
 }
 
-#fire{
+#boom{
     position:absolute;
     display:inline-block;
     width: 6vw;
@@ -133,4 +132,44 @@ td{
     background-image: url(../photos/fire.png);
     background-size: contain;
     background-repeat: no-repeat;
+}
+
+#popup{
+    z-index: 5;
+    height: 70%;
+    width: 50%;
+    top: 15%;
+    left: 25%;
+    display: inline-block;
+    position: absolute;
+    background-color:rgba(255, 255, 255, 0.103);
+    backdrop-filter: blur(5px);
+    border-radius: 20px;
+    border: 2px solid white;
+}
+
+#pocketTank{
+    width: 100%;
+    height: 50%;
+    margin-left: 7%;
+    margin-top: 3%;
+    position: absolute;
+    background-image: url("../photos/ptanks_landing_logo.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    
+}
+
+#playButton{
+    padding: 10px;
+    width: 200px;
+    position: absolute;
+    bottom: 80px;
+    left: 35%;
+    font-size: 20px;
+    border-radius: 10px;
+    color: white;
+    letter-spacing: 2px;
+    background-color: rgb(96,0,153);
+    border: 5px solid black;
 }
