@@ -1,6 +1,6 @@
 var count = 0;
 var turn = 1;
-
+var turretturn = 0;
 
 function start() {
 
@@ -35,11 +35,20 @@ function start() {
         }
     )
 
+
     window.addEventListener("keydown",function(event){
         if(event.key==="q"||event.key==="Q"){
             if(parseInt(angle.innerHTML)>10){
                 angle.innerHTML=parseInt(angle.innerHTML)-1;
-
+                if(turretturn==0){
+                    var x = (45 - angle.innerHTML);
+                    document.getElementsByTagName("img")[turretturn].style.transform="rotate("+ (x)+"deg)";
+                }
+                else{
+                    var x = (45 + angle.innerHTML);
+                    document.getElementsByTagName("img")[turretturn].style.transform="rotate("+ (x-10)+"deg)";
+                    document.getElementsByTagName("img")[turretturn].style.margin="25px 0px 0px 30px"
+                }
             }
          }
         }
@@ -47,7 +56,16 @@ function start() {
     window.addEventListener("keydown",function(event){
         if(event.key==="e"||event.key==="E"){
             if(parseInt(angle.innerHTML)<89){
-                angle.innerHTML=parseInt(angle.innerHTML)+ 1;       
+                angle.innerHTML=parseInt(angle.innerHTML)+ 1;     
+                if(turretturn==0){
+                    var x = ( 45-angle.innerHTML);
+                    document.getElementsByTagName("img")[turretturn].style.transform="rotate(" + (x)+"deg)";
+                }
+                else{
+                    var x = ( 45+angle.innerHTML);
+                    document.getElementsByTagName("img")[turretturn].style.transform="rotate(" + (x)+"deg)";
+                    document.getElementsByTagName("img")[turretturn].style.margin="25px 0px 0px 30px"
+                }
             }
          }
         }
@@ -70,7 +88,6 @@ window.addEventListener("keydown",function(event){
     }
 )
 
-//we have to disable enter button
     window.addEventListener("keydown",function(event){
         if(event.key==="Enter"){
             if(count ==0){
@@ -102,4 +119,5 @@ function play() {
     start();
 
 }
+
 
