@@ -29,7 +29,7 @@ body{
 #tank1{
     left: 200px;
     bottom: 20vh;
-    transform: scale(1.5);
+    transform: scale(1.3);
     background-image: url("../photos/tank1.png");
 }
 #tank1 img{
@@ -41,7 +41,6 @@ body{
     width: 10vw;
     right: 200px;
     bottom: 19vh;
-    transform: scale(1);
     background-image: url("../photos/tank2.png");
 }
 #tank2 img{

@@ -143,7 +143,10 @@ function help(){
         hPress=0
     }
     
+}
 
-
+var bgAudio = document.getElementById("backgroundAudio");
+function backgroundAudio(){
+    bgAudio.play();
 }
 

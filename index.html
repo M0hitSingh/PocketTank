@@ -7,8 +7,15 @@
         <link rel="stylesheet" href="./style/index.css">
     </head>
 
-<body>
+<body onload="backgroundAudio()">
+    <audio id="backgroundAudio">
+        <source src="photos/backgroundAudio.mp3" type="audio/mp3">
+        your browser does not support mp3
+    </audio>
     <div id="container">
+        <audio id="fireAudio">
+            <source src="photos/fireAudio.wav" type="audio/wav">
+        </audio>
         <div id="popup">
             <div id="pocketTank"></div>
                 <button id="playButton" onclick="play()">Play</button>
