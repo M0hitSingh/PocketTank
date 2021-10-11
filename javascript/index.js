@@ -58,7 +58,7 @@ function fire(pow, angl, dir) {
             y = 560 -( (Math.tan(radian))*(i - tank_pos) - ( 10*((i - tank_pos)*(i - tank_pos)) )/ (  (2*(pow*(Math.cos(radian)) ) )* (pow*(Math.cos(radian)))   ) );
             ball.style.top= y + "px";
             i=i+2;
-            if(  y  <= 590){
+            if(  y  <= 560){
                     if(fireball.offsetLeft>=tank2.offsetLeft&&fireball.offsetLeft<=(tank2.offsetLeft+90) 
                         && fireball.offsetTop>=tank2.offsetTop&&fireball.offsetTop<=(tank2.offsetTop+50))
                     {
@@ -67,8 +67,8 @@ function fire(pow, angl, dir) {
                         if(hbar == 1){
                             document.getElementById("health2").style.width = (document.getElementById("health2").offsetWidth) -32+ "px";
                             if(document.getElementById("health2").offsetWidth  < 10 ){
-                                boom.style.left=(tank2.offsetLeft +10)+"px";
-                                boom.style.top=(tank2.offsetTop-13)+"px";
+                                // boom.style.left=(tank2.offsetLeft +5)+"px";
+                                // boom.style.top=(tank2.offsetTop-13)+"px";
                                 document.getElementById("health2").style.width="0px"
                                 popup.style.visibility="visible"
                                 pocketTank.style.backgroundImage="url(photos/gameover.png)";
@@ -77,7 +77,6 @@ function fire(pow, angl, dir) {
                                 playButton.innerHTML="Tank1 Winner !!!";
                                 playButton.style.visibility="visible"
                                 end = 1; 
-
                             }
                             hbar = 0;
                         }        
@@ -90,7 +89,7 @@ function fire(pow, angl, dir) {
             }
             else{
                 boom.style.left=(fireball.offsetLeft)+"px";
-                boom.style.top=(fireball.offsetTop - 50)+"px";
+                boom.style.top=(fireball.offsetTop -40)+"px";                     // boom location  40 + - to increase/ decrease
                 fireball.style.top = "-200px"
                 setTimeout(() => {
                     count=-1;
@@ -99,6 +98,7 @@ function fire(pow, angl, dir) {
                     turretturn =(turretturn%2);
                     table.style.right = "0px";
                     table.style.left = "unset";
+                    document.getElementsByTagName("img")[1].style.transform="rotate("+ ( 220 ) +"deg)";
                     resetAngle.innerHTML="45";
                     resetPower.innerHTML="50";
                     
@@ -113,7 +113,7 @@ function fire(pow, angl, dir) {
             y = 560 -( (Math.tan(radian))*(i) - ( 10*((i)*(i)) )/ (  (2*(pow*(Math.cos(radian)) ) )* (pow*(Math.cos(radian)))   ) );
             ball.style.top = y+"px";
             i = i-2;
-            if( y <=590 ){
+            if( y <=560 ){
                 if(fireball.offsetLeft>=tank1.offsetLeft&&fireball.offsetLeft<=(tank1.offsetLeft+90)
                 &&fireball.offsetTop>=(tank1.offsetTop+20)&&fireball.offsetTop<=(tank1.offsetTop+50))
                 {
@@ -121,8 +121,8 @@ function fire(pow, angl, dir) {
                     if(hbar == 1){
                         document.getElementById("health1").style.width = (document.getElementById("health1").offsetWidth) -32+ "px";
                         if(document.getElementById("health1").offsetWidth  < 10 ){
-                            boom.style.left=(tank1.offsetLeft +10)+"px";
-                            boom.style.top=(tank1.offsetTop-13)+"px";
+                            // boom.style.left=(tank1.offsetLeft +10)+"px";
+                            // boom.style.top=(tank1.offsetTop-13)+"px";
                             document.getElementById("health1").style.width="0px"
                             popup.style.visibility="visible"
                             pocketTank.style.backgroundImage="url(photos/gameover.png)";
@@ -138,12 +138,12 @@ function fire(pow, angl, dir) {
                 setTimeout(() => {
                     boom.style.top=-200+"px";
                 }, 3000);
-    
+
                 projectile2(pow , angl , rng);
             }
             else{
                 boom.style.left=(fireball.offsetLeft)+"px";
-                boom.style.top=(fireball.offsetTop - 50)+"px";
+                boom.style.top=(fireball.offsetTop - 40 )+"px";
                 fireball.style.top = "-200px"
                 setTimeout(() => {
                     count=0;
@@ -152,6 +152,7 @@ function fire(pow, angl, dir) {
                     turretturn =(turretturn%2);
                     table.style.left = "0px";
                     table.style.right = "unset";
+                    document.getElementsByTagName("img")[0].style.transform="rotate(" + (0)+"deg)";
                     resetAngle.innerHTML="45";
                     resetPower.innerHTML="50";
                 }, 1500);

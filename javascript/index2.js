@@ -48,7 +48,7 @@ function start() {
                 else{
                     var x = (45 + angle.innerHTML);
                     document.getElementsByTagName("img")[turretturn].style.transform="rotate("+ (x-10)+"deg)";
-                    document.getElementsByTagName("img")[turretturn].style.margin="25px 0px 0px 25px"
+                    document.getElementsByTagName("img")[turretturn].style.margin="28px -1px 24px 31px"
                 }
             }
          }
@@ -65,7 +65,7 @@ function start() {
                 else{
                     var x = ( 45+angle.innerHTML);
                     document.getElementsByTagName("img")[turretturn].style.transform="rotate(" + (x)+"deg)";
-                    document.getElementsByTagName("img")[turretturn].style.margin="25px 0px 0px 25px"
+                    document.getElementsByTagName("img")[turretturn].style.margin="28px -1px 24px 31px"
                 }
             }
          }
