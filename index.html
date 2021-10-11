@@ -11,9 +11,47 @@
     <div id="container">
         <div id="popup">
             <div id="pocketTank"></div>
-            <button id="playButton" onclick="play()">Play</button>
-        </div>
+                <button id="playButton" onclick="play()">Play</button>
+                <Table id="helpContent">
+                    <tr>
+                        <td>Key</td>
+                        <td>Function</td>
+                    </tr>
+                    <tr>
+                        <td>E</td>
+                        <td>To Increase Turret Angle</td>
+                    </tr>
+                    <tr>
+                        <td>Q</td>
+                        <td>To Decrease Turret Angle</td>
+                    </tr>
+                    <tr>
+                        <td>D</td>
+                        <td>To Increase Power</td>
+                    </tr>
+                    <tr>
+                        <td>A</td>
+                        <td>To Decrease Power</td>
+                    </tr>
+                    <tr>
+                        <td>Right Arrow</td>
+                        <td>Move Tank to the right</td>
+                    </tr>
+                    <tr>
+                        <td>Left Arrow</td>
+                        <td>Move Tank to the left</td>
+                    </tr>
+                    <tr>
+                        <td>Enter</td>
+                        <td>Shoot</td>
+                    </tr>
+                </Table>
+               
+            </div>
+
         <div id="boom"></div> 
+        <div id="helpButton" onclick="help()">Help</div>
+
         <div id="outerHealth1">
             <div id="health1">
     
@@ -32,7 +70,7 @@
             <img src="photos/tank2barrel.png" width="40px" height="5px" >
         </div>
         <div id="ground">
-            <table>
+            <table id="meter">
                 <tr>
                     <td>Angle</td>
                     <td id="angle">45</td>

@@ -110,16 +110,40 @@ var playButton = document.getElementById("playButton");
 var popup = document.getElementById("popup");
 var health1 = document.getElementById("health1");
 var health2 = document.getElementById("health2");
+var helpButton = document.getElementById("helpButton");
 function play() {
-    
+    helpButton.style.visibility="visible";
     pocketTank.style.visibility="hidden";
     playButton.style.visibility="hidden";
     popup.style.visibility="hidden";
     health1.style.width="100%";
-    health2.style.width="100%"
+    health2.style.width="100%";
     end = 0;
     start();
 
 }
+var hPress=0;
+var helpContent = document.getElementById("helpContent")
 
+function help(){
+    if(hPress==0){
+        end=1;
+        helpContent.style.visibility="visible";
+        pocketTank.style.visibility="hidden";
+        playButton.style.visibility="hidden";
+        popup.style.visibility="visible";
+        hPress=1
+    }
+    else{
+        end=0;
+        helpContent.style.visibility="hidden"
+        pocketTank.style.visibility="hidden";
+        playButton.style.visibility="hidden";
+        popup.style.visibility="hidden";
+        hPress=0
+    }
+    
+
+
+}
 

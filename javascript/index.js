@@ -1,6 +1,6 @@
 function fire(pow, angl, dir) {
     var ball = document.getElementById("fireball");
-    var table = document.querySelector("table");
+    var table = document.getElementById("meter")
     var resetAngle = document.getElementById("angle");
     var resetPower = document.getElementById("power");
     var tank1 = document.getElementById("tank1");

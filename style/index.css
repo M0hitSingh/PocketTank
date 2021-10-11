@@ -23,11 +23,13 @@ body{
     background-size: cover;
     background-repeat: no-repeat;
     z-index: 3;
+    
 }
 
 #tank1{
     left: 200px;
     bottom: 20vh;
+    transform: scale(1.5);
     background-image: url("../photos/tank1.png");
 }
 #tank1 img{
@@ -36,10 +38,10 @@ body{
     margin: 9px 0px 0px 62px;
 }
 #tank2{
-    transform: scale(0.8);
     width: 10vw;
     right: 200px;
     bottom: 19vh;
+    transform: scale(1);
     background-image: url("../photos/tank2.png");
 }
 #tank2 img{
@@ -62,15 +64,15 @@ body{
 #fireball{
     z-index: 4;
     position: absolute;
-    width: 10px;
-    height: 10px;
+    width: 15px;
+    height: 15px;
     border-radius: 50%;
     top: -20px;
     left: 200px;
     background-image: radial-gradient(yellow,red);
 }
 
-table{
+#meter {
     position: absolute;
     height: 10vh;
     width: 10vw;
@@ -97,7 +99,7 @@ td{
 #outerHealth1, #outerHealth2{
     display: inline-block;
     position: absolute;
-    top: 5vh;
+    top: 7vh;
     width: 15vw;
     height: 20px;
     border: 3px solid grey;
@@ -173,4 +175,31 @@ td{
     letter-spacing: 2px;
     background-color: rgb(96,0,153);
     border: 5px solid black;
+}
+
+#helpButton{
+    padding: 3px;
+    width: 80px;
+    position: absolute;
+    font-size: 20px;
+    border-radius: 10px;
+    color: white;
+    letter-spacing: 2px;
+    background-color: rgb(96,0,153);
+    right: 10px;
+    top: 10px;
+    border: 2px solid white;
+    visibility: hidden;
+    text-align: center;
+    cursor: pointer;
+}
+
+#helpContent{
+    color: white;
+    width: 90%;
+    height: 90%;
+    font-size: 20px;
+    padding-top: 50px;
+    padding-left: 150px;
+    visibility: hidden;
 }
