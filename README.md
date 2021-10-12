@@ -1,10 +1,10 @@
 # PocketTank   https://guptasandeep7.github.io/PocketTank/
 
-Objective - To make a Game using HTML, CSS and JavaScript (excluding Libraries).
+**Objective** - To make a Game using HTML, CSS and JavaScript (excluding Libraries).
 
-Introduction - A multiplayer game in which you have to destroy each other's tanks by shooting cannon.
+**Introduction** - A multiplayer game in which you have to destroy each other's tanks by shooting cannon.
 
-Project Description and Rules - 
+**Project Description and Rules -** 
 
 1.) On each turn the player has to select the power and angle of the   cannon and try to shoot another player's tank.
 
@@ -16,12 +16,16 @@ Project Description and Rules -
 
 5.) Game will end if any tank health becomes zero.
 
-Additional Points -
+**Additional Points -**
 
-Each tank can move only a few steps.
-Game Audio
-Turret Movement
-Fire 
-help section
+1.) Each tank can move only a few steps.
+
+2.) Game Audio.
+
+3.) Turret Movement.
+
+4.) Fire.
+
+5.) Help section.
 
 Team Members - Sandeep Gupta, Mohit Singh.
