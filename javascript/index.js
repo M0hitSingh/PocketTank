@@ -1,5 +1,4 @@
 function fire(pow, angl, dir) {
-    var ball = document.getElementById("fireball");
     var table = document.getElementById("meter")
     var resetAngle = document.getElementById("angle");
     var resetPower = document.getElementById("power");
@@ -61,11 +60,11 @@ function fire(pow, angl, dir) {
     }
     function projectile1(pow , angl , rng ){
         setTimeout(function(){
-            ball.style.left=i+(tank_pos -save)+"px";
+            fireball.style.left=i+(tank_pos -save)+"px";
             y = 560 -( (Math.tan(radian))*(i - tank_pos) - ( 10*((i - tank_pos)*(i - tank_pos)) )/ (  (2*(pow*(Math.cos(radian)) ) )* (pow*(Math.cos(radian)))   ) );
             i=i+2;
             if(  y  <= 560){
-                ball.style.top= y + "px";
+                fireball.style.top= y + "px";
                     if(fireball.offsetLeft>=tank2.offsetLeft&&fireball.offsetLeft<=(tank2.offsetLeft+90) 
                         && fireball.offsetTop>=tank2.offsetTop&&fireball.offsetTop<=(tank2.offsetTop+50))
                     {
@@ -115,11 +114,11 @@ function fire(pow, angl, dir) {
     }
     function projectile2(pow  , angl , rng){
         setTimeout(function(){
-            ball.style.left= i+(tank_pos - save)+"px";
+            fireball.style.left= i+(tank_pos - save)+"px";
             y = 560 -( (Math.tan(radian))*(i) - ( 10*((i)*(i)) )/ (  (2*(pow*(Math.cos(radian)) ) )* (pow*(Math.cos(radian)))   ) );           
             i = i-2;
             if( y <=560 ){
-                ball.style.top = y+"px";
+                fireball.style.top = y+"px";
                 if(fireball.offsetLeft>=tank1.offsetLeft&&fireball.offsetLeft<=(tank1.offsetLeft+90)
                 &&fireball.offsetTop>=(tank1.offsetTop+10)&&fireball.offsetTop<=(tank1.offsetTop+50))
                 {

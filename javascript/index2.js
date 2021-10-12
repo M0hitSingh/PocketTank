@@ -138,7 +138,6 @@ function help(){
     }  
 }
 var bgAudio = document.getElementById("backgroundAudio");
-function backgroundAudio(){
-    bgAudio.play();
-}
-
+document.body.addEventListener("mousemove", function () {
+    bgAudio.play()
+})
