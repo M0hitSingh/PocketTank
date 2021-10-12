@@ -19,6 +19,9 @@ Project Description and Rules -
 Additional Points -
 
 Each tank can move only a few steps.
-
+Game Audio
+Turret Movement
+Fire 
+help section
 
 Team Members - Sandeep Gupta, Mohit Singh.
