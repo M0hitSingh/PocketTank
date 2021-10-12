@@ -2,11 +2,7 @@ var count = 0;
 var turn = 1;
 var turretturn = 0;
 var end = 0;
-
 function start() {
-
-
-
     var angle = document.getElementById("angle");
     var power = document.getElementById("power");
 
@@ -22,8 +18,7 @@ function start() {
          }
         }
     )
-
-    window.addEventListener("keydown",function(event){
+     window.addEventListener("keydown",function(event){
         if(event.key==="ArrowLeft" && end == 0){
             if(turn==1 && tank1.offsetLeft>0){
                 tank1.style.left = (tank1.offsetLeft-3)+"px";
@@ -35,8 +30,6 @@ function start() {
          }
         }
     )
-
-
     window.addEventListener("keydown",function(event){
         if((event.key==="q"||event.key==="Q") && end == 0){
             if(parseInt(angle.innerHTML)>10){
@@ -72,34 +65,35 @@ function start() {
         }
     )
 
-window.addEventListener("keydown",function(event){
-    if((event.key==="a"||event.key==="A") && end == 0){
-        if(parseInt(power.innerHTML)>1){
-            power.innerHTML=parseInt(power.innerHTML)-1;   
+    window.addEventListener("keydown",function(event){
+        if((event.key==="a"||event.key==="A") && end == 0){
+            if(parseInt(power.innerHTML)>1){
+                power.innerHTML=parseInt(power.innerHTML)-1;   
+            }
         }
     }
-}
-)
-window.addEventListener("keydown",function(event){
-    if((event.key==="d"||event.key==="D") && end == 0){
-        if(parseInt(power.innerHTML)<99){
-            power.innerHTML=parseInt(power.innerHTML)+1;
+    )
+    window.addEventListener("keydown",function(event){
+        if((event.key==="d"||event.key==="D") && end == 0){
+            if(parseInt(power.innerHTML)<99){
+                power.innerHTML=parseInt(power.innerHTML)+1;
+            }
         }
     }
-}
-)
+    )
 
     window.addEventListener("keydown",function(event){
         if((event.key==="Enter") && end == 0){
             if(count ==0){
                 count++;
+                document.getElementById("fireAudio").play();
                 fire(parseInt(power.innerHTML),parseInt(angle.innerHTML),turn);
             }
             if(count == -1){
                 count--;
+                document.getElementById("fireAudio").play();
                 fire(parseInt(power.innerHTML),parseInt(angle.innerHTML),turn);
             }
-    
         }
     }
     )
@@ -141,10 +135,8 @@ function help(){
         playButton.style.visibility="hidden";
         popup.style.visibility="hidden";
         hPress=0
-    }
-    
+    }  
 }
-
 var bgAudio = document.getElementById("backgroundAudio");
 function backgroundAudio(){
     bgAudio.play();
