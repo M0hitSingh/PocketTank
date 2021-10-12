@@ -8,6 +8,7 @@ function fire(pow, angl, dir) {
     var fireball = document.getElementById("fireball");
     var boom = document.getElementById("boom");
     const pi = Math.PI;
+    var ti = 0;
     var hbar = 1;
     // var pow = 100;
     // var angl = 88;
@@ -17,13 +18,19 @@ function fire(pow, angl, dir) {
     if(dir == -1){
         tank_pos = document.getElementById("tank2").offsetLeft  ;
     }
-    if(angl >75){
-        incr = 25;  
+    if(angl >88){
+        incr = 20;                                            // -ve for fast , + ve for slow
     }
-    if(angl < 60 && angl > 30){
-        incr = -25;
+    if(angl > 60 && angl < 75){
+        incr = -20;
     }
-    if(angl < 25){
+    if(angl <= 60 && angl > 30){
+        incr = -35;
+    }
+    if(angl <=30 && angl > 25){
+        incr = -45;
+    }
+    if(angl <= 25){
         incr = -50;
     }
     var t;
@@ -56,9 +63,9 @@ function fire(pow, angl, dir) {
         setTimeout(function(){
             ball.style.left=i+(tank_pos -save)+"px";
             y = 560 -( (Math.tan(radian))*(i - tank_pos) - ( 10*((i - tank_pos)*(i - tank_pos)) )/ (  (2*(pow*(Math.cos(radian)) ) )* (pow*(Math.cos(radian)))   ) );
-            ball.style.top= y + "px";
             i=i+2;
             if(  y  <= 560){
+                ball.style.top= y + "px";
                     if(fireball.offsetLeft>=tank2.offsetLeft&&fireball.offsetLeft<=(tank2.offsetLeft+90) 
                         && fireball.offsetTop>=tank2.offsetTop&&fireball.offsetTop<=(tank2.offsetTop+50))
                     {
@@ -78,13 +85,12 @@ function fire(pow, angl, dir) {
                                 playButton.style.visibility="visible"
                                 end = 1; 
                             }
-                            hbar = 0;
+                            hbar = 0;                                                           //health bar zero taaki baar baar km na ho
                         }        
                     } 
-                       
                     setTimeout(() => {
                         boom.style.top=-200+"px";
-                    }, 3000);
+                    }, 4000);
                 projectile1(pow , angl , rng );
             }
             else{
@@ -110,12 +116,12 @@ function fire(pow, angl, dir) {
     function projectile2(pow  , angl , rng){
         setTimeout(function(){
             ball.style.left= i+(tank_pos - save)+"px";
-            y = 560 -( (Math.tan(radian))*(i) - ( 10*((i)*(i)) )/ (  (2*(pow*(Math.cos(radian)) ) )* (pow*(Math.cos(radian)))   ) );
-            ball.style.top = y+"px";
+            y = 560 -( (Math.tan(radian))*(i) - ( 10*((i)*(i)) )/ (  (2*(pow*(Math.cos(radian)) ) )* (pow*(Math.cos(radian)))   ) );           
             i = i-2;
             if( y <=560 ){
+                ball.style.top = y+"px";
                 if(fireball.offsetLeft>=tank1.offsetLeft&&fireball.offsetLeft<=(tank1.offsetLeft+90)
-                &&fireball.offsetTop>=(tank1.offsetTop+20)&&fireball.offsetTop<=(tank1.offsetTop+50))
+                &&fireball.offsetTop>=(tank1.offsetTop+10)&&fireball.offsetTop<=(tank1.offsetTop+50))
                 {
  
                     if(hbar == 1){
@@ -137,8 +143,8 @@ function fire(pow, angl, dir) {
                 }
                 setTimeout(() => {
                     boom.style.top=-200+"px";
-                }, 3000);
-
+                }, 4000);
+                ti = 0;
                 projectile2(pow , angl , rng);
             }
             else{
